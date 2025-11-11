@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card p-4 shadow-lg rounded-4 border-0">
+  <h3 class="text-center mb-4 fw-semibold text-primary">🩺 Uji Coba Sistem Rekomendasi</h3>
+  <form method="POST" action="/hasil">
+    <div class="mb-3">
+      <label class="form-label">Usia</label>
+      <input type="number" name="usia" class="form-control" placeholder="Contoh: 30" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Profil Anda</label>
+      <select name="profil" class="form-select" required>
+        <option value="remaja">Remaja</option>
+        <option value="wanita dewasa">Wanita Dewasa</option>
+        <option value="ibu menyusui">Ibu Menyusui</option>
+        <option value="wanita menopause">Wanita Menopause</option>
+        <option value="wanita tidak sedang hamil">Wanita Tidak Sedang Hamil</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Keluhan Anda</label>
+      <textarea name="keluhan" class="form-control" rows="3" placeholder="Tuliskan keluhan Anda..." required></textarea>
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary px-4">Lihat Rekomendasi</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

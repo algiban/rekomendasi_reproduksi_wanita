@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card shadow-lg p-4 border-0 rounded-4">
+  <h4 class="text-center mb-3 text-success">💡 Hasil Rekomendasi</h4>
+  <p><strong>Profil:</strong> {{ profil }}</p>
+  <p><strong>Keluhan:</strong> {{ keluhan }}</p>
+  <hr>
+  {% for item in hasil %}
+  <div class="border-bottom pb-3 mb-3">
+    <p><b>Keluhan Inti:</b> {{ item.keluhan_inti }}</p>
+    <p><b>Rekomendasi Medis:</b> {{ item.rekomendasi_medis }}</p>
+    <p><b>Rekomendasi Non-Medis:</b> {{ item.rekomendasi_non_medis }}</p>
+    <p><b>Penanganan:</b> {{ item.penanganan }}</p>
+    <span class="badge bg-info">Similarity: {{ "%.2f"|format(item.similarity_score) }}</span>
+  </div>
+  {% endfor %}
+  <div class="text-center mt-4">
+    <a href="/" class="btn btn-secondary">🔙 Uji Lagi</a>
+  </div>
+</div>
+{% endblock %}

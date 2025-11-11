@@ -1,0 +1,11 @@
+body {
+  background: linear-gradient(120deg, #c8e6f9, #e8f5e9);
+  font-family: 'Poppins', sans-serif;
+}
+.card {
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.9);
+}
+textarea, input, select {
+  border-radius: 12px !important;
+}
